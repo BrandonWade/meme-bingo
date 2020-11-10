@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { uniq } from 'lodash';
 import Card from './Card';
 import './App.css';
 
@@ -9,7 +10,7 @@ function App() {
     const [possibilities, setPossibilities] = useState([]);
 
     const setBingoEntries = () => {
-        const lines = entries.split('\n');
+        const lines = uniq(entries.split('\n'));
         if (lines.length < 25) {
             alert('not enough items - minimum 25 items required');
             return;
@@ -20,7 +21,6 @@ function App() {
 
     return (
         <div className='App'>
-            {possibilities.length >= 25 ? <Card size={size} freeSpace={freeSpace} entries={possibilities} /> : null}
             <div className='App-options'>
                 <div>
                     <input type='checkbox' checked={freeSpace} onChange={() => setFreeSpace(!freeSpace)} /> Free Space
@@ -33,6 +33,7 @@ function App() {
                     <button onClick={setBingoEntries}>Generate</button>
                 </div>
             </div>
+            {possibilities.length >= 25 ? <Card size={size} freeSpace={freeSpace} entries={possibilities} /> : null}
         </div>
     );
 }

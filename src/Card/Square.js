@@ -3,8 +3,11 @@ import React, { useState } from 'react';
 const Square = ({ text }) => {
     const [marked, setMarked] = useState(false);
     return (
-        <td className={`Square ${marked ? 'Square-marked' : ''}`} onClick={() => setMarked(!marked)}>
-            {text}
+        <td className='Square' onClick={() => setMarked(!marked)}>
+            <div className='Square-content'>
+                {text}
+                {marked ? <span className='Square-mark'>⨯</span> : null}
+            </div>
         </td>
     );
 };
