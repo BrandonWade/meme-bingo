@@ -31,5 +31,6 @@ td {
     font-size: 20rem;
     color: red;
     position: absolute;
-    margin-top: -2rem;
+    margin-top: -1.5rem;
+    pointer-events: none;
 }
