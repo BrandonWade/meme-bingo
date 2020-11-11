@@ -27,10 +27,22 @@ td {
     position: relative;
 }
 
-.Square-mark {
-    font-size: 20rem;
-    color: red;
+.Square-mark,
+.Square-mark::after {
+    content: ' ';
+    background-color: red;
     position: absolute;
-    margin-top: -1.5rem;
+    left: 0;
     pointer-events: none;
+    width: 10rem;
+    height: 1.5rem;
+}
+
+.Square-mark {
+    transform: rotate(45deg);
+    margin-left: 1rem;
+}
+
+.Square-mark::after {
+    transform: rotate(-90deg);
 }

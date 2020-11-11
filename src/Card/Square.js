@@ -6,7 +6,7 @@ const Square = ({ text }) => {
         <td className='Square' onClick={() => setMarked(!marked)}>
             <div className='Square-content'>
                 {text}
-                {marked ? <span className='Square-mark'>⨯</span> : null}
+                {marked ? <span className='Square-mark' /> : null}
             </div>
         </td>
     );
