@@ -15,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "bundle": "rm index.html && npm run build && npx gulp && cp ./build/index.html .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

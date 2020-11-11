@@ -23,7 +23,7 @@ const Card = ({ size = 5, entries = [], freeSpace = true }) => {
         return (
             <tr key={row}>
                 {items.map(item => (
-                    <Square key={item} text={item} />
+                    <Square key={`${item}${Math.random()}`} text={item} />
                 ))}
             </tr>
         );
